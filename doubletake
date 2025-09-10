@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>An Anniversary Message</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+body{
+font-family: 'Inter', sans-serif;
+background-color: #f7e9e9;
+}
+.message-card {
+max-width: 640px;
+background-color: #ffffff;
+border-radius: 1rem;
+box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+padding: 2rem;
+line-height: 1.6;
+color: #4a4a4a;
+}
+h1 {
+color: #8c2a38;
+font-weight: 700;
+animation: pulse 2s infinite;
+}
+.apology {
+font-style: italic;
+}
+.carousel-container {
+position: relative;
+overflow: hidden;
+border-radius: 1rem;
+}
+.carousel-track {
+display: flex;
+transition: transform 0.5s ease-in-out;
+}
+.carousel-track img {
+width: 100%;
+flex-shrink: 0;
+object-fit: cover;
+}
+.carousel-btn {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background-color: rgba(0, 0, 0, 0.5);
+color: white;
+padding: 0.5rem;
+border-radius: 9999px;
+cursor: pointer;
+z-index: 10;
+}
+.carousel-btn-prev {
+left: 1rem;
+}
+.carousel-btn-next {
+right: 1rem;
+}
+.fade-in {
+animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+@keyframes pulse {
+0%, 100% { transform: scale(1); }
+50% { transform: scale(1.05); }
+}
+</style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+
+<div class="message-card mx-auto text-center md:text-left">
+<h1 class="text-3xl sm:text-4xl mb-6">Lionel</h1>
+<p class="apology text-lg mb-4 fade-in">
+From the moment we spoke after meeting at "Duke's there has been a tie between us. The endless hours we spent getting to know each other, the laughter echoing in the night club. Our courtship was a whirlwind of long-distance calls and cherished visits, each one solidifying a joy and connection that felt unbreakable. Over the years, that connection, though not completely severed, has been damaged.
+</p>
+<p class="apology text-lg mb-4 fade-in">
+Love, as I reflect on the years we've spent together, my heart is heavy with a deep apology. I am so sorry for the times I've taken you for granted, for not making you feel as loved and cherished as you truly are, and for not being a better version of myself with you. You deserve so much more than the complacency you have sometimes received, and for that, I am truly sorry.
+</p>
+
+<p class="text-base mb-4 fade-in">
+This day is more than just a date on the calendar. It is a day that holds a sacrificial connotation, a testament to the promises we made and the sacrifices that follow. It’s a celebration of the commitment we entered into—a commitment that required you to sacrifice your physical presence, your time, and your provisions to be accountable to our family. I see that sacrifice, I understand it, and I want you to know how deeply I appreciate it.
+</p>
+
+<p class="text-base mb-4 fade-in">
+I am also profoundly apologetic for any moment you have not felt that I am a safe place to communicate. I would surely desire that you feel  that space and time where you can be completely yourself, where your words are always heard and honored, and where vulnerability is a cornerstone of our trust. I am committed to doing better, to being the soft place to land that you need and deserve.
+</p>
+
+<p class="text-base mb-6 fade-in">
+Even with the passage of time, this day will always be a special symbol of our union. But you, my love, mean so much more to me than a singular day in the calendar. You are the origin, the foundation, and the ever-growing force of our family and our love. I want every single day with you to feel like you are winning with us. Because you are everything to me.
+</p>
+
+<!-- Interactive Section: Carousel and Audio -->
+<div class="flex flex-col items-center mb-6">
+<!-- Audio Playlist -->
+<!-- Replace these URLs with your chosen songs -->
+<audio id="audio-1" src="
+https://music.apple.com/us/album/try-our-love-again/1443011806?i=1443012224
+" preload="auto"></audio>
+<audio id="audio-2" src="
+https://youtu.be/w2L8tFicom8?si=1FgvJSO3n07k5Ob3
+"  preload="auto"></audio>
+<audio id="audio-3" src="
+https://audiomack.com//embed/lovealexIsley/song/17114076" scrolling="no" width="100%" height="252" frameborder="0" title="Love Again
+" preload="auto"></audio>
+<audio id="audio-4" src="
+https://music.apple.com/us/album/medley-live/304742636?i=304742664
+" preload="auto"></audio>
+
+<!-- Start Button -->
+<button id="startButton" class="bg-gradient-to-r from-rose-500 to-rose-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform duration-200 transform hover:scale-105">
+Remember This?
+</button>
+<span id="message" class="mt-2 text-sm text-gray-500"></span>
+
+<!-- Photo Carousel -->
+<div id="carouselContainer" class="carousel-container hidden">
+<div class="carousel-track" id="photoCarouselTrack">
+<!-- Replace these URLs with your own photos -->
+<img src="
+https://share.icloud.com/photos/077fEkELbf2C-7dclT6Hm01iw" alt="A meaningful photo of us.">
+<img src="
+https://share.icloud.com/photos/0fcnvdg4pEN6hpucQK1CyepAQ
+" alt="A meaningful photo of us.">
+<img src="
+https://share.icloud.com/photos/0fcc3X3flPCbTZp04-LSILF6Q
+" alt="A meaningful photo of us.">
+<img src="
+https://share.icloud.com/photos/0a3ydMeYbyZ2Mpy2Kzm2rvNkA
+" alt="A meaningful photo of us.">
+<img src="
+https://share.icloud.com/photos/0133P7Yry47SIT8zMeSTgOnuA
+" alt="A meaningful photo of us.">
+</div>
+<button class="carousel-btn carousel-btn-prev" onclick="manualPrevSlide()">&#10094;</button>
+<button class="carousel-btn carousel-btn-next" onclick="manualNextSlide()">&#10095;</button>
+</div>
+</div>
+
+<p class="text-base mb-4 fade-in">I ask a beautiful question? : "Can a mended connection be authentic, committed, whole, and true?" My heart's answer is a resounding yes. I believe that a connection, when it is lovingly and intentionally repaired, can become stronger than it was before. The journey of mending requires a deeper kind of vulnerability and trust, and it is in this process that we can truly see each other, forgive, and commit to a love that is whole precisely because it has been tested and healed.
+Only I cannot answer for you. What do you feel? 
+</p>
+
+<p class="text-center font-bold text-lg text-rose-500 fade-in">September 10, 2014</p>
+</div>
+
+<script>
+// Audio Playlist Logic
+const audioElements = [
+document.getElementById('audio-1'),
+document.getElementById('audio-2'),
+document.getElementById('audio-3'),
+document.getElementById('audio-4')
+];
+let currentTrack = 0;
+
+function playNextTrack() {
+if (currentTrack < audioElements.length) {
+const playPromise = audioElements[currentTrack].play();
+if (playPromise !== undefined) {
+playPromise
+.then(() => {
+console.log(`Playing track ${currentTrack + 1}`);
+})
+.catch(error => {
+console.error(`Failed to play track ${currentTrack + 1}: `, error);
+});
+}
+currentTrack++;
+}
+}
+audioElements.forEach((audio, index) => {
+audio.addEventListener('ended', () => {
+playNextTrack();
+});
+});
+
+// Carousel Logic
+let currentSlide = 0;
+const track = document.getElementById('photoCarouselTrack');
+const images = track.getElementsByTagName('img');
+const carouselContainer = document.getElementById('carouselContainer');
+
+function updateCarousel() {
+track.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
+
+function nextSlide() {
+currentSlide = (currentSlide + 1) % images.length;
+updateCarousel();
+}
+function prevSlide() {
+currentSlide = (currentSlide - 1 + images.length) % images.length;
+updateCarousel();
+}
+
+function manualNextSlide() {
+nextSlide();
+}
+
+function manualPrevSlide() {
+prevSlide();
+}
+
+// Start Button Logic
+const startButton = document.getElementById('startButton');
+
+startButton.addEventListener('click', () => {
+startButton.style.display = 'none'; // Hide the button
+carouselContainer.classList.remove('hidden'); // Show the carousel
+playNextTrack(); // Start the music playlist
+setInterval(nextSlide, 5000); // Auto-play the carousel every 5 seconds
+});
+</script>
+</body>
+</html>
